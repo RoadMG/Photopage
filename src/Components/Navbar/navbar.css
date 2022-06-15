@@ -1,0 +1,167 @@
+a{text-decoration: none; color: black;}
+a:hover{text-decoration: none;}
+a:active{text-decoration: none;}
+a:visited{text-decoration: none;}
+li{list-style: none;}
+ul{text-align: center;}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navi{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.n-main{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 25px;
+}
+
+.n-main, .n-sub, .p-sub, .n-about{
+    color: #2E2E2E;
+}
+
+.p-sub{
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.n-sub{
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.n-about{
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.n-proj{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 10px;
+    width: 30vw;
+    transform: translateY(1%);
+}
+
+.n-proj.close{
+    visibility: hidden;
+}
+
+
+.n-cont{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.n-cont-close{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.n-menuicon{
+    visibility: hidden;
+    display: none;
+}
+
+
+
+@media (max-width: 500px){
+
+
+    ul{
+        padding-left: 0px;
+    }
+
+    .navi{
+        height: auto;
+        position: fixed;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+        z-index: 2;
+    }  
+
+    .n-menuicon{
+        visibility: visible;
+        top: 10px;
+        right: 10px;
+        position: fixed;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .n-cont-close{
+        visibility: hidden;
+        display: none;
+    }
+
+    .n-cont{
+        width: 100vw;
+        visibility: visible;
+        position: fixed;
+        top: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 45px;
+        padding: -70px 0px 20px 0px;
+        background-color: rgb(255, 255, 255, 0.9);
+        z-index: 1;
+    }
+
+    .n-proj{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0px;
+    }
+
+    .n-main{
+        top: 0px;
+        left: 0px;
+        font-size: 20px;
+        height: 45px;
+        margin: auto;
+        padding-top: 10px;
+        position: fixed;
+        width: 100vw;
+        background-color: rgb(255, 255, 255, 0.9);
+        z-index: 2;
+    }
+    .n-sub{
+        font-size: 15px;
+    }
+    .n-about{
+        font-size: 13px;
+    }
+    .p-sub{
+        font-size: 13px;
+    }
+
+}
