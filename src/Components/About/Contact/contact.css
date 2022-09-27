@@ -1,0 +1,116 @@
+.c-button{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(43, 130, 43, 0.6);
+    color: #2E2E2E;
+    border-color: rgb(190, 186, 186);
+    border-radius: 3px;
+    border-width: 0.5px;
+    font-size: 15px;
+    margin: auto auto 50px 30px;
+    cursor: pointer;
+}
+
+.c-popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.c-popup-inner{
+    position: relative;
+    padding:50px 40px 30px 40px;
+    width: 40%;
+    min-width: 500px;
+    background-color: #fff;
+}
+
+.c-close-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 25px;
+    background-color: #fff;
+    border-color: rgb(43, 130, 43);
+    border-radius: 3px;
+    border-width: 1px;
+    color: #2E2E2E;
+    cursor: pointer;
+}
+
+
+/* 아래는 popup 창 내에 있는 요소*/
+
+
+ul{
+    padding: 0;
+    margin: 0;
+
+}
+
+li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    clear: both;
+}
+
+.half{
+    width: 49%;
+    margin-left: 2%;
+    float: left;
+    clear: none;
+    margin-top: 10px;
+}
+
+.half:first-child{
+    margin-left: 0;
+}
+
+input[type='text'],
+input[type='email']{
+    width: 100%;
+    border: 0;
+    height: 50px;
+    font-size: 16px;
+    padding: 0 20px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    background-color: rgb(43, 130, 43, 0.3);
+}
+
+textarea{
+    width: 100%;
+    border: 0;
+    background-color: rgb(43, 130, 43, 0.6);
+    height: 50px;
+    font-size: 16px;
+    min-height: 150px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.c-email-box-btn{
+    color: #2E2E2E;
+    background: 0 0;
+    font: 11px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding: 8px 10px;
+    border: 1px solid rgb(43, 130, 43);
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}

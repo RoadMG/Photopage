@@ -1,7 +1,15 @@
-
+*{
+  box-sizing: border-box;
+}
+:root{
+  --vh:100%;
+}
 .cont{
   height: 100vh;
+  overflow: hidden;
+
 }
+
 
 .content{
     width: 100%;
@@ -25,7 +33,15 @@
   font-size: 1.3rem;
   font-weight: 500;
 }
-
+.c-conbox{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  position: absolute;
+  top: 5vh;
+}
+.c-conbox::-webkit-scrollbar{
+  display: none;
+}
 
 .c-cont{
   height: 80vh;
@@ -158,6 +174,7 @@ hr{
     display: none;
   }
 
+
   .thumb{
     width: 100%;
   }
@@ -192,6 +209,11 @@ hr{
     padding: 10px 10px;
     z-index: 3;
     background-color: white;
+  }
+
+  .content{
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
   }
 
 }

@@ -1,23 +1,20 @@
 import './navbar.css'
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect} from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import {Link} from 'react-router-dom'
-import { useLocation } from 'react-router-dom';
+import {Link, NavLink, useLocation} from 'react-router-dom'
+
 
 const Navbar = ({MenuChange, ContChange, ProjChange}) => {
+
   const [close, setClose] = useState(true);
   const [click, setClick] = useState(true);
 
-  const ClickClose = useCallback(() =>{
+  const ClickClose = () => {
     ProjChange();
     setClose(!close);
-  },[close])
+  }
 
   const domain = useLocation();
-
-  const MenuClick = useCallback(() => {
-    setClick(!click);
-  },[click])
 
   useEffect(()=>{
 
@@ -27,7 +24,7 @@ const Navbar = ({MenuChange, ContChange, ProjChange}) => {
     else if (domain.pathname === '/') {
     }
     else {
-      MenuChange();
+      MenuChange()
     }
   },[click])
 
@@ -38,28 +35,28 @@ const Navbar = ({MenuChange, ContChange, ProjChange}) => {
         <Link to='/' className='n-main'>Mingyu Kil</Link>
 
         <div className={click ? 'n-cont' : 'n-cont-close'}>
-          <Link to='/portrait' className='n-sub' >Portrait</Link>
-          <Link to='/project' className='n-sub' onClick={ClickClose}>Project</Link>
+          <NavLink to='/portrait' className='n-sub' activeclassname='active' >Portrait</NavLink>
+          <NavLink to='/project' className='n-sub' activeclassname='active' onClick={ClickClose}>Project</NavLink>
           <ul className={`n-proj ${close ? '' : 'close'}`}>
             <li>
-              <Link to='/palace' className='p-sub'>Korean Palace</Link>
+              <NavLink to='/palace' className='p-sub' activeclassname='active'>Korean Palace</NavLink>
             </li>
             <li>
-              <Link to='/coldtree' className='p-sub'>Memories</Link>
+              <NavLink to='/coldtree' className='p-sub' activeclassname='active'>Memories</NavLink>
             </li>
             <li>
-              <Link to='/archtr' className='p-sub'>Architecture</Link>
+              <NavLink to='/archtr' className='p-sub' activeclassname='active'>Architecture</NavLink>
             </li>
             <li>
-              <Link to='/sea' className='p-sub' >See the Sea</Link>
+              <NavLink to='/sea' className='p-sub' activeclassname='active'>See the Sea</NavLink>
             </li>
           </ul>
 
           <Link to='/about' className='n-about'>About</Link>
         </div>
 
-        <MenuIcon sx={{ fontSize: 30 }} color='#565453' className='n-menuicon'
-          onClick={MenuClick} />
+        <MenuIcon sx={{ fontSize: 45 }} color='#565453' className='n-menuicon'
+          onClick={()=>{setClick(!click)}} />
 
 
       </nav>

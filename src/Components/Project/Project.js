@@ -8,12 +8,12 @@ import { useState } from 'react';
 
 function Project() {
     const [mobile, setMobile] = useState(false);
+    const [promobile, setPromobile] = useState(true);
+
     const SetCont = () => {
         setMobile(!mobile)
     }
-
-
-    const [promobile, setPromobile] = useState(true);
+    
     const ProjectMargin = useCallback(() => {
         setPromobile(!promobile)
     }, [promobile])
