@@ -6,8 +6,9 @@
 }
 .cont{
   height: 100vh;
-  overflow: hidden;
-
+}
+.cont::-webkit-scrollbar{
+  display: none;
 }
 
 
