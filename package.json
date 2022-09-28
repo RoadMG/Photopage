@@ -2,6 +2,7 @@
   "name": "dumi",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://roadmg.github.io/Photopage/",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.9.3",
@@ -46,6 +47,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://RoadMG.github.io/photopage"
+  }
 }
