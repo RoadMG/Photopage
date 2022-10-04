@@ -36,6 +36,7 @@ const Navbar = () => {
             activeclassname="active"
             onClick={() => {
               ClickClose();
+              menuDispatch(menuClickerAction.makeFalse());
             }}
           >
             Project
@@ -58,17 +59,34 @@ const Navbar = () => {
                 to="/coldtree"
                 className="p-sub"
                 activeclassname="active"
+                onClick={() => {
+                  menuDispatch(menuClickerAction.makeFalse());
+                }}
               >
                 Memories
               </NavLink>
             </li>
             <li>
-              <NavLink to="/archtr" className="p-sub" activeclassname="active">
+              <NavLink
+                to="/archtr"
+                className="p-sub"
+                activeclassname="active"
+                onClick={() => {
+                  menuDispatch(menuClickerAction.makeFalse());
+                }}
+              >
                 Architecture
               </NavLink>
             </li>
             <li>
-              <NavLink to="/sea" className="p-sub" activeclassname="active">
+              <NavLink
+                to="/sea"
+                className="p-sub"
+                activeclassname="active"
+                onClick={() => {
+                  menuDispatch(menuClickerAction.makeFalse());
+                }}
+              >
                 See the Sea
               </NavLink>
             </li>
