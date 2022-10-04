@@ -82,11 +82,12 @@ a.active{
     align-items: flex-start;
     padding-left: 10px;
     width: 30vw;
-    transform: translateY(1%);
+    opacity: 1;
+
 }
 
 .n-proj.close {
-    visibility: hidden;
+    opacity: 0;
 }
 
 

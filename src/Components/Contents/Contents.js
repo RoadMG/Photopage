@@ -3,15 +3,14 @@ import Navbar from "../Navbar/Navbar";
 import "./contents.css";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const contVariants = {
-  hidden: (direction) => ({
-    x: direction > 0 ? window.outerWidth : -window.outerWidth,
-  }),
-  visible: { x: 0 },
-  exit: (direction) => ({
-    x: direction > 0 ? -window.outerWidth : window.outerWidth,
-  }),
+  hidden: {
+    opacity: 0,
+  },
+  visible: { opacity: 1 },
+  exit: { opacity: 0 },
 };
 
 const Contents = ({ datas, link }) => {
@@ -23,37 +22,23 @@ const Contents = ({ datas, link }) => {
   useEffect(() => {
     setScreenSize();
   }, []);
+
+  const click = useSelector((state) => state.menuClick);
   const length = datas.length;
   const [current, setCurrent] = useState(0);
   const [sorce, setSorce] = useState(true);
-  const [click, setClick] = useState(true);
-  const [leaving, setLeaving] = useState(false);
-  const [direction, setDirection] = useState(0);
-  console.log(leaving);
 
-  const toggleLeaving = () => setLeaving(!leaving);
+  console.log(click);
 
-  const MenuChange = () => {
-    setClick(!click);
-  };
   const getImg = (id) => {
     setCurrent(id - 1);
     setSorce(true);
   };
-  const SetFalse = () => {
-    setSorce(true);
-  };
-  const nextSlide = (newDirection) => {
-    if (leaving) return;
-    toggleLeaving();
-    setDirection(newDirection);
+  const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  const preSlide = (newDirection) => {
-    if (leaving) return;
-    toggleLeaving();
-    setDirection(newDirection);
+  const preSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
@@ -69,7 +54,6 @@ const Contents = ({ datas, link }) => {
             style={{ fontWeight: "bold", cursor: "pointer", width: "100px" }}
             onClick={() => {
               setSorce(false);
-              setLeaving(true);
             }}
           >
             Thumbnails
@@ -89,24 +73,19 @@ const Contents = ({ datas, link }) => {
             Close
           </Link>
         </div>
-        <AnimatePresence
-          initial={false}
-          onExitComplete={toggleLeaving}
-          custom={direction}
-        >
+        <AnimatePresence initial={false}>
           <motion.div
             className="c-conbox"
             variants={contVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
-            custom={direction}
             transition={{ type: "tween", duration: 0.5 }}
             key={current}
           >
             {datas.slice(current, current + 1).map((prop) => (
               <div key={"total" + prop.id}>
-                <div
+                <motion.div
                   className="c-cont"
                   style={{
                     backgroundImage: `url(${prop.img})`,
@@ -115,13 +94,13 @@ const Contents = ({ datas, link }) => {
                 >
                   <button
                     className="p-left"
-                    onClick={() => preSlide(-1)}
+                    onClick={() => preSlide()}
                   ></button>
                   <button
                     className="p-right"
-                    onClick={() => nextSlide(1)}
+                    onClick={() => nextSlide()}
                   ></button>
-                </div>
+                </motion.div>
                 <section className="c-section">
                   <hr />
                   <div className="c-desc">
@@ -144,8 +123,7 @@ const Contents = ({ datas, link }) => {
         </AnimatePresence>
       </div>
       <div className={sorce ? "thumb close" : "thumb"}>
-        <Navbar MenuChange={MenuChange} SetFalse={SetFalse} />
-
+        <Navbar />
         <div className={click ? "c-thumb open" : "c-thumb"}>
           {datas.map((item) => {
             return (

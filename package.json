@@ -2,7 +2,6 @@
   "name": "dumi",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://roadmg.github.io/Photopage/",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@emotion/react": "^11.9.3",
@@ -17,6 +16,7 @@
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
@@ -26,9 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

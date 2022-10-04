@@ -7,10 +7,6 @@
 .cont{
   height: 100vh;
 }
-.cont::-webkit-scrollbar{
-  display: none;
-}
-
 
 .content{
     width: 100%;
@@ -115,6 +111,7 @@ hr{
 }
 
 .c-thumb{
+
   position: absolute;
   margin-left: 20vw;
   -webkit-column-count: 3;
@@ -144,11 +141,6 @@ hr{
 .thumb.close{
   display: none;
   visibility: hidden;
-}
-
-.thumb{
-  margin-top: 0px;
-  visibility: visible;
 }
 
 .close{
