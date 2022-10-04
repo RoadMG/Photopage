@@ -12,7 +12,7 @@ import { Seadata } from "./Data/Seadata";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/photopage">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

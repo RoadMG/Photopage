@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 function Project() {
   const projMobile = useSelector((state) => state.projClick);
   const mobile = useSelector((state) => state.contClick);
-  console.log(mobile, projMobile);
+
   return (
     <div className="project">
       <Navbar />

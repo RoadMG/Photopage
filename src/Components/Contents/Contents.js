@@ -28,8 +28,6 @@ const Contents = ({ datas, link }) => {
   const [current, setCurrent] = useState(0);
   const [sorce, setSorce] = useState(true);
 
-  console.log(click);
-
   const getImg = (id) => {
     setCurrent(id - 1);
     setSorce(true);
