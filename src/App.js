@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Home from "./Components/Home/Home";
 import Contents from "./Components/Contents/Contents";
 import Project from "./Components/Project/Project";
@@ -11,6 +11,14 @@ import { Architecturedata } from "./Data/Architecturedata";
 import { Seadata } from "./Data/Seadata";
 
 const App = () => {
+  const setScreenSize = () => {
+    let vh = window.innerHeight * 0.02;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
+  useEffect(() => {
+    setScreenSize();
+  }, []);
   return (
     <BrowserRouter>
       <Routes>

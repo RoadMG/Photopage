@@ -64,7 +64,7 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    margin-top: 26vh;
+    margin-top: 18vh;
     z-index: 1;
     margin-left: 0;
   }
@@ -77,7 +77,7 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    margin-top: 12vh;
+    margin-top: 5vh;
     z-index: 1;
   }
  
@@ -96,6 +96,6 @@
 
 
   .p-tmargin.top{
-    margin-top: 37vh;
+    margin-top: 30vh;
   }
 }

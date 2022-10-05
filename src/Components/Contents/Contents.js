@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import "./contents.css";
 import { Link } from "react-router-dom";
@@ -14,15 +14,6 @@ const contVariants = {
 };
 
 const Contents = ({ datas, link }) => {
-  const setScreenSize = () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  };
-
-  useEffect(() => {
-    setScreenSize();
-  }, []);
-
   const click = useSelector((state) => state.menuClick);
   const length = datas.length;
   const [current, setCurrent] = useState(0);

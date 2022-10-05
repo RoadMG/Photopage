@@ -14,7 +14,7 @@ function Project() {
       <div
         className={
           mobile
-            ? `p-cont p-tmargin ${projMobile ? "" : "top"}`
+            ? `p-cont p-tmargin ${projMobile ? "top" : ""}`
             : "p-cont close"
         }
       >
