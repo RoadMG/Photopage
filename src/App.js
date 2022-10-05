@@ -12,7 +12,7 @@ import { Seadata } from "./Data/Seadata";
 
 const App = () => {
   const setScreenSize = () => {
-    let vh = window.innerHeight * 0.02;
+    let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   };
 
