@@ -108,7 +108,7 @@ hr{
   width: 8vw;
 }
 
-.c-thumb{
+.contents-thumb{
   position: absolute;
   margin-left: 20vw;
   -webkit-column-count: 3;
@@ -123,14 +123,14 @@ hr{
   top: 10px;
 }
 
-.c-thumbpic{
+.contents-thumbpic{
   margin-top: 10px;
   cursor: pointer;
   
   transition: all 1s;
 }
 
-.c-thumbpic:hover{
+.contents-thumbpic:hover{
   opacity: 0.6;
   transition: all 1s;
 }
@@ -152,7 +152,7 @@ hr{
 
 
 @media (max-width: 991px){
-  .c-thumb{
+  .contents-thumb{
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
@@ -172,7 +172,7 @@ hr{
     visibility: hidden;
   }
 
-  .c-thumb{
+  .contents-thumb{
     position: inherit;
     margin: 30vh 0px;
     padding-top: 10px;
@@ -182,7 +182,7 @@ hr{
     z-index: 1;
   }
 
-  .c-thumb.open{
+  .contents-thumb.open{
     position: inherit;
     margin: 5vh 0px;
     padding-top: 20px;

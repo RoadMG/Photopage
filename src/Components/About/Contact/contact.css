@@ -1,4 +1,4 @@
-.c-button{
+.contact-button{
     width: 100px;
     height: 30px;
     background-color: rgb(43, 130, 43, 0.6);
@@ -11,7 +11,7 @@
     cursor: pointer;
 }
 
-.c-popup{
+.contact-popup{
     position: fixed;
     top: 0;
     left: 0;
@@ -25,7 +25,7 @@
     z-index: 2;
 }
 
-.c-popup-inner{
+.contact-popup-inner{
     position: relative;
     padding:50px 40px 30px 40px;
     width: 40%;
@@ -33,7 +33,7 @@
     background-color: #fff;
 }
 
-.c-close-btn{
+.contact-close-btn{
     position: absolute;
     top: 15px;
     right: 15px;
@@ -67,7 +67,7 @@ li{
     clear: both;
 }
 
-.half{
+.email-box-half{
     width: 49%;
     margin-left: 2%;
     float: left;
@@ -75,7 +75,7 @@ li{
     margin-top: 10px;
 }
 
-.half:first-child{
+.email-box-half:first-child{
     margin-left: 0;
 }
 
@@ -102,7 +102,7 @@ textarea{
     padding: 10px 20px;
 }
 
-.c-email-box-btn{
+.contact-email-box-btn{
     color: #2E2E2E;
     background: 0 0;
     font: 11px;

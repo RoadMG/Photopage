@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
-const contVariants = {
+const contentsVariants = {
   hidden: {
     opacity: 0,
   },
@@ -14,7 +14,7 @@ const contVariants = {
 };
 
 const Contents = ({ datas, link }) => {
-  const click = useSelector((state) => state.menuClick);
+  const hamburgerMenuStatus = useSelector((state) => state.menuClick);
   const length = datas.length;
   const [current, setCurrent] = useState(0);
   const [sorce, setSorce] = useState(true);
@@ -65,7 +65,7 @@ const Contents = ({ datas, link }) => {
         <AnimatePresence initial={false}>
           <motion.div
             className="c-conbox"
-            variants={contVariants}
+            variants={contentsVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -113,12 +113,16 @@ const Contents = ({ datas, link }) => {
       </div>
       <div className={sorce ? "thumb close" : "thumb"}>
         <Navbar />
-        <div className={click ? "c-thumb open" : "c-thumb"}>
+        <div
+          className={
+            hamburgerMenuStatus ? "contents-thumb open" : "contents-thumb"
+          }
+        >
           {datas.map((item) => {
             return (
               <div key={item.id} onClick={() => getImg(item.id)}>
                 <img
-                  className="c-thumbpic"
+                  className="contents-thumbpic"
                   src={item.img}
                   alt=""
                   style={{ width: "100%" }}
